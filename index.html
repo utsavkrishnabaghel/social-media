@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <section class="social-media">
+        <ul class="sci">
+            <li data-text="Facebook" data-color="#1877f2">
+                <a href="https://www.facebook.com/ubonofficial/?ti=as" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+
+            <li data-text="Youtube" data-color="#ff0000">
+                <a href="https://www.youtube.com/c/UBONWorld/featured" class="yt"><i class="fa-brands fa-youtube"></i>
+                </a>
+            </li>
+            <li data-text="Twitter" data-color="#0099ff">
+                <a href="" class="tr"><i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li data-text="Instagram" data-color="#e4405f">
+                <a href="" class="insta"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li data-text="Whatsapp" data-color="#25d366">
+                <a href="https://wa.me/9717563845" class="whatspp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <script src="./test/vanilla-tilt.min.js"></script>
+
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".sci li a"), {
+            max: 30,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+
+
+        });
+
+        let list = document.querySelectorAll('.sci li');
+        let bg = document.querySelector('.social-media');
+        list.forEach(elements => {
+            elements.addEventListener('mouseenter', function(event) {
+                let color = event.target.getAttribute('data-color');
+                bg.style.backgroundColor = color;
+            })
+
+
+            elements.addEventListener('mouseleave', function(event) {
+
+                bg.style.backgroundColor = '#fff';
+            })
+        })
+    </script>
+</body>
+
+</html>

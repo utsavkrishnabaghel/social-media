@@ -1,0 +1,94 @@
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.social-media .sci {
+    position: relative;
+    display: flex;
+}
+
+.social-media .sci li {
+    list-style: none;
+}
+
+.js-tilt-glare {
+    border-radius: 10px;
+}
+
+.social-media .sci li a {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 4em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.1);
+    transition: background 0.25s;
+}
+
+.social-media .sci li::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 120px));
+    font-size: 14vw;
+    pointer-events: none;
+    font-weight: 700;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.social-media .sci li:hover::before {
+    opacity: 0.1;
+    transform: translate(-50%, calc(-50% + 150px));
+}
+
+.social-media .sci li a:hover.fb {
+    background: #1877f2;
+}
+
+.social-media .sci li a:hover.yt {
+    background: #ff0000;
+}
+
+.social-media .sci li a:hover.tr {
+    background: #0099ff;
+}
+
+.social-media .sci li a:hover.insta {
+    background: #e4405f;
+}
+
+.social-media .sci li a:hover.whatspp {
+    background: #25d366;
+}
+
+.social-media .sci li a .fa-brands {
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+.social-media .sci li a:hover .fa-brands {
+    color: #fff;
+    transform: scale(1.75) translateZ(50px);
+}
+
+@media (max-width: 500px) {
+    .social-media .sci {
+        display: block;
+    }
+}
